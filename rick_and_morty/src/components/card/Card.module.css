@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box;
+}
+
+.cardDiv{
+    font-family: 'Raleway', sans-serif;
+    font-size: 10px;
+    width: 400px;
+    height: max-content;
+    margin: 5px;
+    border: 1px solid black;
+    top: 10px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.cardButton{
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    position: relative;
+    float: right;
+}
+
+.cardName{
+    background-color: black;
+    border-radius: 0 2px 2px 0;
+    color: white;
+    font-size: 15px;
+    width: 80%;
+    padding: 3px;
+}
