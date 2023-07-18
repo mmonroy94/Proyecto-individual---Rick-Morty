@@ -5,19 +5,25 @@ import {NavLink} from 'react-router-dom';
 // COMPONENTE HIJO - SU PADRE ES CARDS
 
 const Card =({id,name, status, species, gender, origin, image, onClose}) => {
+
    return (
-      <div className={styles.cardDiv}>
-         <button onClick={() => onClose(id)} className={styles.cardButton}>X</button>
-         <NavLink to={`/detail/${id}`}>
-            <h2 className={styles.cardName}>{name}</h2>
-         </NavLink>
-            <h2>{status}</h2>
-            <h2>{species}</h2>
-            <h2>{gender}</h2>
-            <h2>{origin.name}</h2>
+      <div className={styles.cardContainer}>
+         <div className={styles.cardImg}>
+            <button onClick={() => onClose(id)}>X</button>
             <img src={image} alt='imagen'/>
+            <NavLink to={`/detail/${id}`}>
+               <h2>{name}</h2>
+            </NavLink>
+         </div>
+         <div className={styles.cardDetails}>
+            <p>{status}</p>
+            <p>Specie: {species}</p>
+         </div>
       </div>
    )
 }
+        
+//             <p>Género: {gender}</p>
+//             <p>Origen: {origin.name}</p>
 
 export default Card;

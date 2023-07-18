@@ -2,32 +2,55 @@
     box-sizing: border-box;
 }
 
-.cardDiv{
-    font-family: 'Raleway', sans-serif;
-    font-size: 10px;
-    width: 400px;
-    height: max-content;
+.cardContainer{
+    background-color: lightblue;
     margin: 5px;
-    border: 1px solid black;
     top: 10px;
     display: flex;
-    flex-direction: column-reverse;
-}
-
-.cardButton{
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 5px 10px;
     position: relative;
-    float: right;
+    flex-direction: column;
+    width: 250px;
 }
 
-.cardName{
+.cardImg {
+    display: contents;
+}
+
+.cardImg h2{
     background-color: black;
-    border-radius: 0 2px 2px 0;
     color: white;
     font-size: 15px;
-    width: 80%;
-    padding: 3px;
+    font-weight: bold;
+    margin: 0;
+    padding: 5px;
+}
+
+.cardImg h2:hover{
+    color: black;
+    background-color: #a7f730;
+}
+
+.cardImg button{
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 5px 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.cardImg button:hover {
+    background-color: #a7f730;
+    color: black;
+}
+
+.cardDetails{
+    font-family: 'Raleway', sans-serif;
+    font-size: 12px;
+    color: white;
+    background-color: black;
+    display: flex;
+    justify-content: space-around;
 }

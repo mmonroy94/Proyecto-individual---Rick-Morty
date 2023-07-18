@@ -6,15 +6,20 @@ import About from './components/about/About.jsx';
 import Detail from './components/detail/Detail.jsx';
 import ErrorAlert from './components/errorAlert/ErrorAlert.jsx';
 import Form from './components/form/Form.jsx';
-import {Routes,Route} from 'react-router-dom';
+import {Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 import './App.css';
 
 const App = () => {
 //HOOK UseState que contiene un arreglo de characters que va a contener objetos que representarán un character individualmente
    const [characters, setCharacters] = React.useState([])
 
+   const [access, setAccess] = React.useState(false)
+   let email = 'henry@gmail.com'
+   let password = 'abcd1234' 
+
+   const navigate = useNavigate()
 //Función OnSearch permitirá agregar nuevos personajes al local state characters, se la pasamos como PROPS al comp. NAV
-function onSearch(id) {
+const onSearch = (id) => {
    axios(`https://rickandmortyapi.com/api/character/${id}`)
    .then(response => response.data)
    .then((data) => {
@@ -31,12 +36,30 @@ function onSearch(id) {
       setCharacters(charactersFiltered)
    }
 
+//Simulación de login
+   const login = (userData) => {
+      if(email === userData.email && password === userData.password){
+         setAccess(true);
+         navigate ('/home');
+      }
+   }
+
+   React.useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
+
+   const location = useLocation();
+
    return (
       <div className='App'>
-         <Nav onSearch={onSearch}/>
+         {
+         location.pathname !== '/'
+         ? <Nav onSearch={onSearch}/>
+         : null
+         }
    
          <Routes>
-            <Route path='/' element={<Form />}/>
+            <Route path='/' element={<Form login={login}/>}/>
             <Route path='/home' element={<Cards characters={characters} onClose={onClose}/>}/>
             <Route path='/about' element={<About />}/>
             <Route path='/detail/:id' element={<Detail />}/>
