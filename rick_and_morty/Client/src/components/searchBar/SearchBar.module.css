@@ -1,0 +1,35 @@
+.barContainer{
+    display: flex;
+    width:40%;
+}
+
+.barContainer input{
+    width: 50%;
+    min-width: 35%;
+    height: 30px;
+    background-color: #ffffff;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid white;
+
+}
+
+.barContainer input:focus{
+    outline: #ffffff;
+}
+
+.searchButton{
+    width: 20%;
+    min-width: 15%;
+    height: 30px;
+    background-color: #132C33;
+    color: #ffffff;
+    border-radius: 0 5px 5px 0;
+    border: 1px solid #132C33;
+}
+
+.searchButton:hover{
+    background-color: #a7f730;
+    border: 1px solid white;
+    color: #132C33;
+    font-weight: bold;
+}

@@ -1,0 +1,27 @@
+.detailsContainer{
+    background-color: antiquewhite;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.detailsContainer p{
+    display: inline-block;
+
+}
+
+.characterImage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.characterImage img{
+    border-radius: 50%;
+}
+
+.characterInfo{
+    color: blue;
+    
+}

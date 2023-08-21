@@ -1,0 +1,88 @@
+.cardContainer {
+    width: 250px;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    border: 2px solid #1a2122;
+    border-radius: 10px 0 10px 10px;
+    overflow: hidden;
+    background-color: black;
+    color: #ffffff;
+    margin: 5px;
+}
+
+.cardContainer .closeButton {
+    background-color: #1a2122;
+    position: absolute;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 15px;
+    border: none;
+    margin: 0;
+}
+
+.cardContainer button:hover {
+    color: black;
+    background: linear-gradient(#82cb14,#a7f730);
+}
+
+.cardContainer h3{
+    height: 55px;
+    color: white;
+    background-color: #1a2122;
+    border-top: 2px solid #1a2122;
+    margin: 0;
+    padding: 10px 10px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardContainer h3:hover {
+    border: none;
+    color: black;
+    background: linear-gradient(#82cb14,#a7f730);
+}
+
+.cardDetails{
+    display: flex;
+    height: 50px;
+}
+
+.cardDetails > .infoDetails, .favButton{
+    font-size: 13px;
+    background-color: black;
+    color: white;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardDetails .infoDetails{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cardDetails .infoDetails p{
+    margin: 0;
+}
+
+.cardDetails span {
+    font-weight: bold;
+}
+
+.cardDetails .favButton{
+    width: 30%;
+    border-left: 2px solid #1a2122;
+    border-top: none;
+    border-bottom: none;
+    border-right: none;
+}
