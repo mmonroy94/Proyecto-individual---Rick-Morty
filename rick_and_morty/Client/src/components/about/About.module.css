@@ -25,9 +25,9 @@
     font-size: 50px;
 }
 
-.infoContainer span{
+.aboutSpan{
     font-weight: bold;
-    color: aquamarine;
+    color: #97ce4c;
 }
 
 .infoContainer p{

@@ -19,30 +19,36 @@ const Detail = () => {
         return setCharacter({});
      }, [id]);
 
+    const statusDetail = () => {
+        if(character.status==='Alive'){
+            return <span>Alive 🟢</span>
+        }
+        if(character.status==='Dead'){
+            return <span>Dead 🔴</span>
+        }
+        if(character.status==='unknown'){
+            return <span>Unknown❓</span>
+        }
+    }
 
     return(
         <div className={styles.detailsContainer}>
-            <p>CHARACTER'S DETAILS</p>
+            <p className={styles.detailsTitle}>CHARACTER'S DETAILS</p>
+            <div className={styles.characterDetails}>
                 <div className={styles.characterImage}>
-                    <img src={character.image} alt={character.name}/>
-                    <h2>{character.name}</h2>
+                    <img src={character?.image} alt={character?.name}/>
                 </div>
-                
+                <hr/>
                 <div className={styles.characterInfo}>
-            
-                    <h3>Specie:</h3>
-                    <p>{character.species}</p>
-                    <h3>Gender:</h3>
-                    <p>{character.gender}</p>
-                    <h3>Status:</h3>
-                    <p>{character.status}</p>
-                    <h3>Origin:</h3>
-                    <p>{character.origin && character.origin.name}</p> 
-                    <h3>Location:</h3>
-                    <p>{character.location && character.location.name}</p>
+                    <h2>{character?.name}</h2>
+                    <h3 className={styles.idDetails}>ID: {character?.id}</h3>
+                    <p><strong>Status: </strong>{statusDetail()}</p>
+                    <p><strong>Specie: </strong>{character?.species}.</p>
+                    <p><strong>Gender: </strong>{character?.gender}.</p>
+                    <p><strong>Origin: </strong>{character?.origin}.</p> 
+                    <p><strong>Location: </strong>{character?.location}.</p>
                 </div>
-                
-
+            </div>
         </div>
     )
 }

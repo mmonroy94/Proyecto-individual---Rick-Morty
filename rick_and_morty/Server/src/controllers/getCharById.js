@@ -4,7 +4,7 @@ const getCharById = (res,id) => {
     axios(`https://rickandmortyapi.com/api/character/${id}`)
     .then(response => response.data)
     // se puede manejar con destructurin o con data y llamar a cada propiedad como data.id, data.name ...
-    .then(({name,gender,species,origin,image,status})=>{
+    .then(({name,gender,species,origin,image,status,location})=>{
         const character = {
             id,
             name,
@@ -12,7 +12,8 @@ const getCharById = (res,id) => {
             species,
             origin: origin.name,
             image,
-            status
+            status,
+            location: location.name
         }
 
         return res
